@@ -10,6 +10,20 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+
+  /* Truist Purple palette */
+  --color-truistpurple-50:  #f2e9fb;
+  --color-truistpurple-100: #ddbdf3;
+  --color-truistpurple-200: #c38de9;
+  --color-truistpurple-300: #a85de0;
+  --color-truistpurple-400: #8d2fd9;
+  --color-truistpurple-500: #7115c3;
+  --color-truistpurple-600: #5c2d91;
+  --color-truistpurple-700: #4b2377;
+  --color-truistpurple-800: #39195c;
+  --color-truistpurple-900: #271042;
+  --color-truistpurple-950: #1a0a2a;
+
 }
 
 @media (prefers-color-scheme: dark) {
