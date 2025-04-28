@@ -3,7 +3,6 @@ import Link from 'next/link'
 import { MagnifyingGlassIcon } from '@heroicons/react/20/solid'
 import {
   Bars3Icon,
-  BellIcon,
   XMarkIcon,
   RocketLaunchIcon,
   CodeBracketIcon,
@@ -20,25 +19,59 @@ import NavDropdown from '@/components/NavDropdown'
 // Primary navigation items matching your app routes with updated icons
 const navMenuItems = [
   {
-    name: 'Quickstart', href: '/quickstart', icon: RocketLaunchIcon, current: false, subItems: []},
-  { name: 'Deploy', href: '/deploy', icon: CloudArrowUpIcon, current: false, subItems: [{ name: 'Resources', href: '/somethingelse' }, { name: 'Accounts', href: '/somethingelse' },] },
-  { name: 'API', href: '/api', icon: CodeBracketIcon, current: false, subItems: [] },
-  { name: 'Resources', href: '/resources', icon: BookOpenIcon, current: false, subItems: [    { name: 'Documentation', href: '/somethingelse' },
-  ] },
-  { name: 'Support', href: '/support', icon: ChatBubbleOvalLeftEllipsisIcon, current: false, subItems: [] },
+    name: 'Quickstart',
+    href: '#',
+    icon: RocketLaunchIcon,
+    current: false,
+    subItems: [],
+  },
+  {
+    name: 'Deploy',
+    href: '#',
+    icon: CloudArrowUpIcon,
+    current: false,
+    subItems: [
+      { name: 'Cloud Resources', href: '#' },
+      { name: 'Cloud Accounts', href: '#' },
+    ],
+  },
+  {
+    name: 'API',
+    href: '#',
+    icon: CodeBracketIcon,
+    current: false,
+    subItems: [],
+  },
+  {
+    name: 'Resources',
+    href: '#',
+    icon: BookOpenIcon,
+    current: false,
+    subItems: [
+      { name: 'Documentation', href: '#' },
+      { name: 'Reports', href: '#' },
+    ],
+  },
+  {
+    name: 'Support',
+    href: '#',
+    icon: ChatBubbleOvalLeftEllipsisIcon,
+    current: false,
+    subItems: [],
+  },
 ];
 
 // User menu items
 const profileMenuItems = [
-  { name: 'Account settings', href: '/account-settings' },
-  { name: 'Sign out', href: '/sign-out' },
-]
+  { name: 'Settings', href: '#' },
+  { name: 'Sign out',          href: '#' },
+];
 
-// User
+// User details
 const userDetails = {
   firstName: 'Kareem',
-  lastName: 'Washington',
-  email: 'Kareem.Washington@truist.com',
+  lastName:  'Washington',
+  email:     'Kareem.Washington@truist.com',
 }
 
 export default function Example() {
@@ -48,17 +81,11 @@ export default function Example() {
         <div className="relative flex h-16 items-center justify-between">
           <div className="flex items-center px-2 lg:px-0">
             <div className="shrink-0">
-              < Logo />
+              <Logo />
             </div>
             <div className="hidden lg:ml-6 lg:block">
               <div className="flex space-x-4">
-
-                {/* Profile dropdown */}
-
-
-
                 {navMenuItems.map((item) => (
-
                   <NavDropdown
                     key={item.name}
                     icon={item.icon}
@@ -87,7 +114,7 @@ export default function Example() {
           </div>
           <div className="flex lg:hidden">
             {/* Mobile menu button */}
-            <DisclosureButton className="group relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-truistpurple-700 hover:text-white focus:ring-2 focus:ring-white focus:outline-hidden focus:ring-inset">
+            <DisclosureButton className="group relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-truistpurple-700 hover:text-white focus:ring-2 focus:ring-white focus:outline-none focus:ring-inset">
               <span className="absolute -inset-0.5" />
               <span className="sr-only">Open main menu</span>
               <Bars3Icon aria-hidden="true" className="block size-6 group-data-open:hidden" />
@@ -96,8 +123,6 @@ export default function Example() {
           </div>
           <div className="hidden lg:ml-4 lg:block">
             <div className="flex items-center">
-
-              {/* Profile dropdown */}
               <ProfileDropdown
                 label={`Welcome, ${userDetails.firstName}`}
                 items={profileMenuItems}
@@ -114,10 +139,11 @@ export default function Example() {
               key={item.name}
               as="a"
               href={item.href}
-              className={`flex items-center rounded-md px-3 py-2 text-base font-medium ${item.current
-                ? 'bg-truistpurple-900 text-white'
-                : 'text-gray-300 hover:bg-truistpurple-700 hover:text-white'
-                }`}
+              className={`flex items-center rounded-md px-3 py-2 text-base font-medium ${
+                item.current
+                  ? 'bg-truistpurple-900 text-white'
+                  : 'text-gray-300 hover:bg-truistpurple-700 hover:text-white'
+              }`}
             >
               <item.icon className="h-5 w-5 mr-2 flex-shrink-0" aria-hidden="true" />
               {item.name}
@@ -125,7 +151,7 @@ export default function Example() {
           ))}
         </div>
         <div className="border-t border-gray-700 pt-4 pb-3">
-          {/* Stack welcome message and email vertically */}
+          {/* Mobile profile section */}
           <div className="flex flex-col px-5 space-y-1">
             <div className="text-base font-medium text-white">
               {`Welcome, ${userDetails.firstName}`}
